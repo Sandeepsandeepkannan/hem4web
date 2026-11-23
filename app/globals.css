@@ -1,0 +1,40 @@
+/* 1. External Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=DM+Serif+Display&display=swap');
+
+/* 2. Tailwind import */
+@import "tailwindcss";
+
+/* 3. Theme and variables */
+@theme {
+  --color-gold-accent: #c9a84c;
+  --color-dark-green: #0a1f16;
+  --font-serif-luxury: "DM Serif Display", serif;
+  --font-hero-script: "Cormorant Garamond", serif;
+}
+
+/* FIX STARTS HERE */
+:root {
+  --background: #ffffff;  /* Change this to white */
+  --foreground: #0a1f16;  /* Change this to your dark green for text */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* In your globals.css */
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
